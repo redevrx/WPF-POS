@@ -16,7 +16,7 @@ namespace POSProgram
         public App()
         {
             //Register Syncfusion license
-            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MjAzOTA2QDMxMzcyZTM0MmUzMFNCOTZjVEtPQzBNTWVSSUJjUVZUK2NML3FMV3BmeUdQdVlkM3gzcEhZV289");
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("your key");
         }
     }
 }
