@@ -1,0 +1,22 @@
+﻿<Window x:Class="POSProgram.LoadingPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:POSProgram"
+        mc:Ignorable="d"
+         ResizeMode="NoResize" Topmost="True" Loaded="Window_Loaded" ShowInTaskbar="False" WindowStartupLocation="CenterScreen" WindowStyle="None" Height="100" Width="100">
+    <Window.Effect>
+        <DropShadowEffect
+            BlurRadius="20"
+            ShadowDepth="20"
+            Opacity="30"
+            />
+    </Window.Effect>
+    <Grid Background="WhiteSmoke">
+        <ProgressBar
+  Style="{StaticResource MaterialDesignCircularProgressBar}"
+  Value="0"
+  IsIndeterminate="True" Height="Auto" Margin="25,24,25,26" Width="Auto" />
+    </Grid>
+</Window>

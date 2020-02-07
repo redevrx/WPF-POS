@@ -1,0 +1,142 @@
+﻿<UserControl x:Class="POSProgram.Products"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:POSProgram"
+             xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
+             mc:Ignorable="d" 
+             d:DesignHeight="578"   Loaded="UserControl_Loaded" d:DesignWidth="1020">
+    <StackPanel Orientation="Vertical" Background="#FFFEFEFE">
+
+        <Grid Height="579">
+            <syncfusion:SfDataGrid Name="grid_products" 
+                    Margin="6,6,238,10" SelectionChanged="grid_products_SelectionChanged"
+                                   GridPasteOption="PasteData,ExcludeFirstLine"   ItemsSource="{Binding}"  AllowFrozenGroupHeaders="True" AutoExpandGroups="True" ShowGroupDropArea="True" AllowResizingHiddenColumns="True" AllowResizingColumns="True" AllowDraggingColumns="True" ColumnSizer="Auto" ShowRowHeader="True" AutoGenerateColumnsForCustomType="True" AllowFiltering="True" FilterRowPosition="Top" BorderBrush="#FF009AFF" RowSelectionBrush="#6458D416" SelectionForegroundBrush="Black" RowHoverHighlightingBrush="#FF25ABDE" Background="White" GroupRowSelectionBrush="#64FFFFFF" FontFamily="Dubai Medium" EditTrigger="OnTap" AllowDrop="True" AllowRowHoverHighlighting="True" Foreground="#FF707070" FontSize="16">
+                <syncfusion:SfDataGrid.Effect>
+                    <DropShadowEffect BlurRadius="10" Opacity="0.2" ShadowDepth="2"/>
+                </syncfusion:SfDataGrid.Effect>
+
+
+            </syncfusion:SfDataGrid>
+            <StackPanel x:Name="container_Preview" PreviewKeyDown="container_Preview_PreviewKeyDown" Orientation="Vertical" Margin="787,0,10,0">
+                <Grid  Margin="1,40,0.333,0" >
+                    <materialDesign:PackIcon Margin="4,10,0,0" Kind="KeyAdd" Foreground="#FF208D61"/>
+                    <TextBox Name="txt_Id" 
+                           Width="190"
+                             materialDesign:HintAssist.Hint=" ID"
+                             materialDesign:HintAssist.Foreground="Green"
+                             materialDesign:TextFieldAssist.UnderlineBrush="Green"
+                              Margin="20,5,9.667,2.333" TextAlignment="Left"  FontFamily="Century Gothic" FontSize="16" CaretBrush="#FF1AB608"/>
+                </Grid>
+                
+                <Grid  Margin="1,4,0.333,0" >
+                    <materialDesign:PackIcon Margin="4,10,0,0" Kind="Work" Foreground="#FF208D61"/>
+                    <TextBox Name="txt_productId" 
+                           Width="190"
+                             materialDesign:HintAssist.Hint="Products ID"
+                             materialDesign:HintAssist.Foreground="Green"
+                             materialDesign:TextFieldAssist.UnderlineBrush="Green"
+                              Margin="20,5,9.667,2.333" TextAlignment="Left"  FontFamily="Century Gothic" FontSize="16" CaretBrush="#FF1AB608"/>
+                </Grid>
+                <Grid Margin="1,4,0.333,0" >
+                    <materialDesign:PackIcon Foreground="#FF208D61" Margin="4,10,0,0" Kind="Rename"/>
+                    <TextBox Name="txt_productName" CaretBrush="#FF1AB608"
+                             Margin="20,5,9.667,2.333" 
+                              materialDesign:HintAssist.Hint="Products Name"
+                             materialDesign:HintAssist.Foreground="Green"
+                             materialDesign:TextFieldAssist.UnderlineBrush="Green"
+                             TextAlignment="Left"  
+                              FontFamily="Century Gothic" FontSize="16"/>
+                </Grid>
+                <Grid Margin="1,4,0.333,0"  >
+                    <materialDesign:PackIcon Margin="4,10,0,0"  Kind="Support" Foreground="#FF208D61"/>
+                    <TextBox Name="txt_supplierId" CaretBrush="#FF1AB608"
+                             Margin="20,5,9.667,2.333" 
+                              materialDesign:HintAssist.Hint="Supplier ID"
+                             materialDesign:HintAssist.Foreground="Green"
+                             materialDesign:TextFieldAssist.UnderlineBrush="Green"
+                             TextAlignment="Left"  
+                             FontFamily="Century Gothic" FontSize="16"/>
+                </Grid>
+
+                <Grid  Margin="1,4,0.333,0" >
+                    <materialDesign:PackIcon Margin="4,10,0,0"  Kind="AcUnit" Foreground="#FF208D61"></materialDesign:PackIcon>
+                    <TextBox Name="txt_unit" CaretBrush="#FF1AB608"
+                            Margin="20,5,9.667,2.333" 
+                             materialDesign:HintAssist.Hint="Unit"
+                             materialDesign:HintAssist.Foreground="Green"
+                             materialDesign:TextFieldAssist.UnderlineBrush="Green"
+                             TextAlignment="Left"  
+                             FontFamily="Century Gothic" FontSize="16"/>
+                </Grid>
+
+                <Grid Margin="1,4,0.333,0" >
+                    <materialDesign:PackIcon Margin="4,12,0,0"  Kind="Money" Foreground="#FF208D61"/>
+                    <TextBox Name="txt_price" CaretBrush="#FF1AB608"
+                             Margin="20,5,9.667,2.333" 
+                             materialDesign:HintAssist.Hint="Price"
+                             materialDesign:HintAssist.Foreground="Green"
+                             materialDesign:TextFieldAssist.UnderlineBrush="Green"
+                             TextAlignment="Left"  
+                             FontFamily="Century Gothic" FontSize="16"/>
+                </Grid>
+
+                
+                <ComboBox Name="combo_brand"
+                          
+                         Height="40" Margin="10,4,9.667,0" materialDesign:HintAssist.Hint="Brand"
+  Style="{StaticResource MaterialDesignFloatingHintComboBox}" SelectionChanged="combo_brand_SelectionChanged">
+                    
+                </ComboBox>
+
+                <ComboBox Name="combo_category" Height="40" Margin="10,4,9.667,0" materialDesign:HintAssist.Hint="Categorys"
+  Style="{StaticResource MaterialDesignFloatingHintComboBox}" SelectionChanged="combo_category_SelectionChanged">
+                 
+                </ComboBox>
+              
+
+                <Grid  Margin="0,20,0,0"
+  Width="124" Height="35">
+                    
+                    <Button  Name="btn_productSave"
+                             Click="btn_productSave_Click"
+    Style="{StaticResource MaterialDesignRaisedLightButton}"
+    Height="35"
+    materialDesign:ButtonAssist.CornerRadius="15" Background="#FF9053FF">
+                        <TextBlock
+      Text="Save" />
+                    </Button>
+                    
+                </Grid>
+                
+                <Grid Margin="0,5,0,0"
+  Width="124" Height="35">
+                    <Button  Name="btn_productUpdate"
+                             Click="btn_productUpdate_Click"
+    Style="{StaticResource MaterialDesignRaisedLightButton}"
+    Height="35"
+    materialDesign:ButtonAssist.CornerRadius="15" Background="#FF9053FF">
+                        <TextBlock
+      Text="Update" />
+                    </Button>
+                </Grid>
+
+
+                <Grid  Margin="0,5,0,0"
+  Width="124" Height="35">
+                    <Button  Name="btn_productDelete"
+                             Click="btn_productDelete_Click"
+    Style="{StaticResource MaterialDesignRaisedLightButton}"
+    Height="35"
+    materialDesign:ButtonAssist.CornerRadius="15" Background="#FF9053FF">
+                        <TextBlock
+      Text="Remove" />
+                    </Button>
+                </Grid>
+
+            </StackPanel>
+        </Grid>
+    </StackPanel>
+</UserControl>

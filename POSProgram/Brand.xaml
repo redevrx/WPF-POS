@@ -1,0 +1,95 @@
+﻿<UserControl x:Class="POSProgram.Brand"
+              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:POSProgram"
+             mc:Ignorable="d" 
+             d:DesignHeight="578" Loaded="UserControl_Loaded" d:DesignWidth="1020">
+    <Grid>
+        <StackPanel Orientation="Vertical" Background="White">
+            <Grid Height="577">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="59*"/>
+                    <ColumnDefinition Width="111*"/>
+                </Grid.ColumnDefinitions>
+                <DataGrid Name="grid_Brand"  Margin="10,11,0,10"  Width="770" Grid.ColumnSpan="2" HorizontalAlignment="Left" HeadersVisibility="Column"   SelectionChanged="grid_Brand_SelectionChanged">
+
+                    <DataGrid.Effect>
+                        <DropShadowEffect Opacity="0.2" ShadowDepth="3" BlurRadius="10"/>
+                    </DataGrid.Effect>
+                </DataGrid>
+                <StackPanel x:Name="grid_container" PreviewKeyDown="grid_container_PreviewKeyDown" Orientation="Vertical" Margin="434,0,2,0" Grid.Column="1">
+                    <Grid  Margin="2,120,0,0">
+                        <materialDesign:PackIcon Margin="5,5,0,0"
+                            Kind="Onepassword" Foreground="#FFE5391A" />
+                        <TextBox Name="txt_bID" CaretBrush="#FFD0271C"
+                                 Margin="19,0,0,0" 
+                                 materialDesign:HintAssist.Hint="ID"
+                                 materialDesign:HintAssist.Foreground="Red"
+                                 materialDesign:TextFieldAssist.UnderlineBrush="Red"
+                                 TextAlignment="Left" 
+                                 Width="190"  
+                                 FontFamily="Century Gothic" FontSize="16" />
+                    </Grid>
+
+                    <Grid  Margin="2,20,0,0" >
+                        <materialDesign:PackIcon Margin="5,5,0,0"
+                            Kind="TextboxPassword" Foreground="#FFE5391A" />
+                        <TextBox Name="txt_brandID" CaretBrush="#FFD0271C"
+                               Margin="19,0,0,0" 
+                                 materialDesign:HintAssist.Hint="Enter Brand ID"
+                                 materialDesign:HintAssist.Foreground="Red"
+                                 materialDesign:TextFieldAssist.UnderlineBrush="Red" 
+                                 TextAlignment="Left" Width="190"  
+                                 FontFamily="Century Gothic" FontSize="16" />
+                    </Grid>
+
+                    <Grid  Margin="2,20,0,0"  >
+                        <materialDesign:PackIcon Margin="5,5,0,0"
+                            Kind="Rename" Foreground="#FFE5391A" />
+                        <TextBox Name="txt_brandName" 
+                                 Margin="19,0,0,0" 
+                                 materialDesign:HintAssist.Hint="Enter Brand Name"
+                                 materialDesign:HintAssist.Foreground="Red"
+                                 materialDesign:TextFieldAssist.UnderlineBrush="Red" 
+                                 TextAlignment="Left" Width="190" 
+                                 FontFamily="Century Gothic" FontSize="16"/>
+                    </Grid>
+                    <Button BorderBrush="{x:Null}" Height="1" Width="10" Background="{x:Null}"/>
+                    <StackPanel Orientation="Vertical" Height="317">
+                        <Button Name="btn_saveBrand" Content="Save"
+                            Style="{StaticResource RoundButton}"
+                            Margin="0,38,0,0"
+                            Height="35"
+                            Width="180" Click="btn_saveBrand_Click">
+                            <Button.Effect>
+                                <DropShadowEffect Opacity="0.2" ShadowDepth="2" BlurRadius="10"/>
+                            </Button.Effect>
+                        </Button>
+                        <Button x:Name="btn_deleteBrand" Content="Remove"
+                            Style="{StaticResource RoundButton}"
+                            Margin="0,10,0,0"
+                            Height="35"
+                            Width="180" Click="btn_deleteBrand_Click">
+                            <Button.Effect>
+                                <DropShadowEffect Opacity="0.2" ShadowDepth="2" BlurRadius="10"/>
+                            </Button.Effect>
+                        </Button>
+
+                        <Button Name="btn_UdateBrand" Content="Update"
+                            Style="{StaticResource RoundButton}"
+                            Margin="0,10,0,0"
+                            Height="35"
+                            Width="180" Click="btn_UdateBrand_Click">
+                            <Button.Effect>
+                                <DropShadowEffect Opacity="0.2" ShadowDepth="2" BlurRadius="10"/>
+                            </Button.Effect>
+                        </Button>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</UserControl>

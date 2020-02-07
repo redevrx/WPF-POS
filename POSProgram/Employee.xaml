@@ -1,0 +1,88 @@
+﻿<UserControl x:Class="POSProgram.Employee"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:POSProgram"
+             xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="578" Loaded="UserControl_Loaded" d:DesignWidth="1020">
+    <StackPanel Orientation="Vertical" Background="#FFF1F1F1">
+        <Grid Height="578">
+            <StackPanel Orientation="Vertical" Margin="0,0,249,0">
+
+                <DataGrid Margin="10,10,-0.333,10"
+                          Name="grid_Employee" 
+                          SelectionChanged="grid_Employee_SelectionChanged"
+                          Height="559">
+
+                </DataGrid>
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical" Margin="771,0,0,0" VerticalAlignment="Center">
+                <Grid Margin="0,40,0,0" Width="220">
+                    <TextBox   Name="txt_id" CaretBrush="Red"
+                        Margin="20,0,0,0"
+                        Height="30"
+                        materialDesign:HintAssist.Foreground="Red"
+                        materialDesign:TextFieldAssist.UnderlineBrush="Red"
+  materialDesign:HintAssist.Hint="ID" />
+                    <materialDesign:PackIcon Margin="0,10,0,0" Kind="TextboxPassword" Foreground="#FFE11717" />
+
+                </Grid>
+
+                <Grid Margin="0,5,0,0" Width="220">
+                    <TextBox  
+                        Name="txt_employeeID" CaretBrush="Red"
+                        Margin="20,0,0,0"
+                        Height="30"
+                        materialDesign:HintAssist.Foreground="Red"
+                        materialDesign:TextFieldAssist.UnderlineBrush="Red"
+  materialDesign:HintAssist.Hint="Employee ID" />
+                    <materialDesign:PackIcon Margin="0,10,0,0" Kind="ForgotPassword" Foreground="#FFE11717" />
+
+                </Grid>
+
+                <Grid Margin="0,5,0,0" Width="220">
+                    <TextBox  
+                        Name="txt_user" CaretBrush="Red"
+                        Margin="20,0,0,0"
+                        Height="30"
+                        materialDesign:HintAssist.Foreground="Red"
+                        materialDesign:TextFieldAssist.UnderlineBrush="Red"
+  materialDesign:HintAssist.Hint="Name" />
+                    <materialDesign:PackIcon Margin="0,10,0,0" Kind="User" Foreground="#FFE11717" />
+
+                </Grid>
+
+                
+
+
+                <Grid  Margin="0,40,0,0" Height="50">
+                    <StackPanel Orientation="Horizontal">
+                        <Button
+                            Name="btn_save"
+                              Margin="40,0,0,0"
+                            Click="btn_save_Click"
+  Content="{materialDesign:PackIcon Kind=ContentSave}"
+  ToolTip="Save" />
+                        <Button 
+                            Name="btn_update"
+                            Margin="5,0,0,0"
+                            Click="btn_update_Click"
+  Content="{materialDesign:PackIcon Kind=Update}"
+  ToolTip="Update" />
+
+                        <Button
+                            Name="btn_delete"
+                              Margin="5,0,0,0"
+                            Click="btn_delete_Click"
+  Content="{materialDesign:PackIcon Kind=RemoveCircle}"
+  ToolTip="Remove" />
+                    </StackPanel>
+                </Grid>
+            </StackPanel>
+        </Grid>
+    </StackPanel>
+</UserControl>

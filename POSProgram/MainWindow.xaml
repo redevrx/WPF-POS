@@ -1,0 +1,264 @@
+﻿<Window x:Class="POSProgram.MainWindow"
+          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:POSProgram"
+       
+        mc:Ignorable="d"
+        ToolTip="Double Click for Close App..." MouseDoubleClick="Window_MouseDoubleClick" MouseDown="Window_MouseDown" Loaded="Window_Loaded" ResizeMode="NoResize" WindowStyle="None" WindowStartupLocation="CenterScreen" Height="650" Width="1200">
+    <Grid  x:Name="grid">
+        <StackPanel Margin="0,0,0,0" Orientation="Horizontal" Height="58"  VerticalAlignment="Top" Background="#FF00C6FF">
+            <StackPanel.Effect>
+                <DropShadowEffect ShadowDepth="6" BlurRadius="10" Opacity="0.2"/>
+            </StackPanel.Effect>
+            <Grid Margin="15,0,0,0">
+                <Image Source="{x:Null}">
+
+                </Image>
+            </Grid>
+
+            <Grid Margin="0,10,0,4">
+                <Label Content="POS" Foreground="WhiteSmoke" FontFamily="Century Gothic" FontSize="20">
+
+                </Label>
+            </Grid>
+
+            <Grid Margin="80,2,0,0" Width="240" Height="34">
+                <Border Background="{x:Null}"  Margin="0,0,0,0" Padding="0" CornerRadius="15" BorderBrush="#FF141212" BorderThickness="0.5" >
+                    <TextBox 
+                        Name="txt_searh"
+                        KeyDown="txt_search_KeyDown"
+                        materialDesign:HintAssist.Hint="Search Products"
+                        Margin="25.333,-0.667,23.333,0" TextAlignment="Left" Width="190"  Background="{x:Null}" BorderBrush="{x:Null}" SelectionBrush="{x:Null}"    FontFamily="Century Gothic" FontSize="18" Foreground="Black"/>
+                </Border>
+            </Grid>
+            <Grid
+                Margin="0,0,0,0.333" Width="755">
+                
+                <ToggleButton
+                    Margin="700,0,0,0"
+                    Background="WhiteSmoke"
+  Style="{StaticResource MaterialDesignActionToggleButton}"
+  ToolTip="Icon User">
+                    <Image  Name="image_user"
+    Source="{x:Null}" Stretch="Fill"></Image>
+                </ToggleButton>
+            </Grid>
+        </StackPanel>
+        <StackPanel Margin="0" Orientation="Vertical" HorizontalAlignment="Left" Width="166" Height="592" VerticalAlignment="Bottom">
+            <StackPanel.Effect>
+                <DropShadowEffect Opacity="0.2"/>
+            </StackPanel.Effect>
+            <StackPanel.Background>
+                <LinearGradientBrush EndPoint="1,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF00C0F7" Offset="0"/>
+                    <GradientStop Color="#0072ff" Offset="1"/>
+                </LinearGradientBrush>
+            </StackPanel.Background>
+            <Grid Margin="0,5,0,0"  Height="40">
+                <StackPanel  Orientation="Horizontal">
+                    <Grid Margin="10,14,0,0" >
+                        <materialDesign:PackIcon Kind="ViewDashboard" Foreground="White" />
+                    </Grid>
+                    <Grid Width="128" Height="32" Margin="0,4,0,0">
+
+                        <Button Name="btn_dashboad"
+                                
+                                Click="btn_dashboad_Click" Content="{DynamicResource dashboad}" FontFamily="Century Gothic" FontSize="18" 
+                                  
+                                    BorderBrush="{x:Null}" 
+                                    Background="{x:Null}" Foreground="WhiteSmoke">
+                        </Button>
+
+                        <TextBlock Name="txt_user_show" 
+                                   TextAlignment="Left"
+                                   Margin="1010,-52,-984,58"
+                                 
+                                   Foreground="WhiteSmoke"
+                            Text="User Name" FontFamily="Dubai Medium" FontSize="18"/>
+                        <Grid  Margin="996,-59,-870,52" 
+                               Background="#FF040404"
+                               Opacity="0.5"
+                               RenderTransformOrigin="0.5,0.5">
+                            <Grid.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="-1"/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Grid.RenderTransform>
+                        </Grid>
+
+                        <TextBlock x:Name="txt_user_admin"
+                                   TextAlignment="Center"
+                                   Foreground="WhiteSmoke"
+                                    FontFamily="Dubai Medium" FontSize="18"
+                                   Text="Admin" Margin="915,-52,-865,58"/>
+
+                    </Grid>
+                </StackPanel>
+            </Grid>
+
+            <Grid Margin="0,5,0,0"  Height="40">
+                <StackPanel  Orientation="Horizontal">
+                    <Grid Margin="10,14,0,0" >
+                        <materialDesign:PackIcon Kind="Account" Foreground="White" />
+                    </Grid>
+                    <Grid Width="128" Height="32" Margin="0,4">
+
+                        <Button Name="btn_account"
+                                
+                                Content="{DynamicResource account}" FontFamily="Century Gothic" FontSize="18" 
+                                     BorderBrush="{x:Null}" 
+                                    Background="{x:Null}" Foreground="WhiteSmoke" Click="btn_account_Click">
+                           
+                        </Button>
+
+                    </Grid>
+                </StackPanel>
+            </Grid>
+
+            <Grid Margin="0,5,0,0"  Height="40">
+                <StackPanel  Orientation="Horizontal">
+                    <Grid Margin="10,14,0,0" >
+                        <materialDesign:PackIcon Kind="PeopleAdd" Foreground="White" />
+                    </Grid>
+                    <Grid Width="128" Height="32" Margin="0,4">
+
+                        <Button Name="btn_employee"
+                                
+                                Content="Employee" 
+                                FontFamily="Century Gothic" 
+                                FontSize="18" 
+                                BorderBrush="{x:Null}" 
+                                Background="{x:Null}" Foreground="WhiteSmoke"
+                                Click="btn_employee_Click">
+
+                        </Button>
+
+                    </Grid>
+                </StackPanel>
+            </Grid>
+
+            <Grid Margin="0,5,0,0"  Height="40">
+                <StackPanel  Orientation="Horizontal">
+                    <Grid Margin="10,14,0,0" >
+                        <materialDesign:PackIcon Kind="BoxVariant" Foreground="White" />
+                    </Grid>
+                    <Grid Width="128" Height="32" Margin="0,4,0,0">
+
+                        <Button Name="btn_product"  Content="{DynamicResource product}" FontFamily="Century Gothic" FontSize="18" 
+                                    
+                                     BorderBrush="{x:Null}" 
+                                    Background="{x:Null}" Foreground="WhiteSmoke" Click="btn_product_Click">
+                          
+                        </Button>
+
+                    </Grid>
+                </StackPanel>
+            </Grid>
+
+            <Grid Margin="0,5,0,0"  Height="40">
+                <StackPanel  Orientation="Horizontal">
+                    <Grid Margin="10,14,0,0" >
+                        <materialDesign:PackIcon Kind="Barn" Foreground="White" />
+                    </Grid>
+                    <Grid Width="128" Height="32" Margin="0,4">
+
+
+                        <Button Name="btn_brand"  Content="{DynamicResource brand}" FontFamily="Century Gothic" FontSize="18" 
+                                    
+                                    BorderBrush="{x:Null}" 
+                                    Background="{x:Null}" Foreground="WhiteSmoke"  Click="btn_brand_Click">
+                           
+                        </Button>
+
+                    </Grid>
+
+
+                </StackPanel>
+            </Grid>
+            <Grid Margin="0,5,0,0"  Height="40">
+                <StackPanel  Orientation="Horizontal">
+                    <Grid Margin="10,14,0,0" >
+                        <materialDesign:PackIcon Kind="Category" Foreground="White" />
+                    </Grid>
+                    <Grid Width="128" Height="32" Margin="0,4">
+
+
+                        <Button Name="btn_category"  Content="{DynamicResource category}" FontFamily="Century Gothic" FontSize="18" 
+                               
+                                   BorderBrush="{x:Null}" 
+                                    Background="{x:Null}" Foreground="WhiteSmoke"   Click="btn_category_Click">
+                           
+                        </Button>
+
+                    </Grid>
+                    
+                    
+
+
+                </StackPanel>
+            </Grid>
+
+            <Grid Margin="0,5,0,0"  Height="40">
+                <StackPanel  Orientation="Horizontal">
+                    <Grid Margin="10,14,0,0" >
+                        <materialDesign:PackIcon Kind="Stocking" Foreground="White" />
+                    </Grid>
+                    <Grid Width="128" Height="32" Margin="0,4">
+
+
+                        <Button Name="btn_stock" 
+                                Content="{DynamicResource stockin}"
+                                Click="btn_stock_Click"
+                                FontFamily="Century Gothic" FontSize="18" 
+                                  
+                                    BorderBrush="{x:Null}" 
+                                    Background="{x:Null}" Foreground="WhiteSmoke"  >
+                           
+                        </Button>
+
+                    </Grid>
+                </StackPanel>
+            </Grid>
+
+            <Grid Margin="0,5,0,0"  Height="40">
+                <StackPanel  Orientation="Horizontal">
+                    <Grid Margin="10,14,0,0" >
+                        <materialDesign:PackIcon Kind="PointOfSale" Foreground="White" />
+                    </Grid>
+                    <Grid Width="128" Height="32" Margin="0,4">
+
+
+                        <Button Name="btn_pos" 
+                                Content="{DynamicResource pos}"
+                                HorizontalAlignment="Center"
+                                Click="btn_Pos_Click"
+                                FontFamily="Century Gothic" FontSize="18" 
+                                   BorderBrush="{x:Null}" 
+                                    Background="{x:Null}" Foreground="WhiteSmoke" >
+                            <Button.Effect>
+                                <DropShadowEffect ShadowDepth="2" BlurRadius="1" Opacity="0.2"/>
+                            </Button.Effect>
+                        </Button>
+
+                    </Grid>
+                </StackPanel>
+            </Grid>
+            
+
+
+        </StackPanel>
+        <StackPanel Margin="0,0,8,10" Orientation="Vertical" Background="White"  Width="1020" Height="578" VerticalAlignment="Bottom" HorizontalAlignment="Right">
+            <StackPanel.Effect>
+                <DropShadowEffect ShadowDepth="1" BlurRadius="21" Opacity="0.2"/>
+            </StackPanel.Effect>
+            <Grid Name="grid_main_controller" Height="577" Margin="0,0,-0.333,0"/>
+            
+        </StackPanel>
+    </Grid >
+</Window>
