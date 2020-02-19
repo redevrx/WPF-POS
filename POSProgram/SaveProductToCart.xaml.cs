@@ -143,17 +143,9 @@ namespace POSProgram
         private void btn_saveQuantity_Click(object sender, RoutedEventArgs e)
         {
             checkStock();
-            updateStockQuant();
-            SaveOrderCart();
+            //will update stock when export bill
         }
 
-
-        private void updateStockQuant()
-        {
-            var db = new DbManagement();
-
-            db.UpdateQuantStock(pId,Convert.ToInt32(txt_quantity.Text));
-        }
         private void checkStock()
         {
             var db = new DbManagement();
@@ -162,6 +154,15 @@ namespace POSProgram
             if (quantStock <= 10)
             {
                 MessageBox.Show("this Product quantity min....");
+            }
+
+            if (quantStock == 0)
+            {
+                MessageBox.Show("Not Product in Stock");
+            }
+            else
+            {
+                SaveOrderCart();
             }
         }
     }

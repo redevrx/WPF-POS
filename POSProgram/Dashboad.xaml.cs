@@ -43,7 +43,8 @@ namespace POSProgram
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
-           
+           getPriceToDate();
+            sellTopProduct();
          
         }
 
@@ -93,9 +94,59 @@ namespace POSProgram
         }
 
        
-         void counttime(object sender, EventArgs e)
+      private void counttime(object sender, EventArgs e)
         {
             txt_time_use.Text  = DateTime.Now.ToString("HH:mm:ss");
+        }
+
+        //get total price to day
+        private void getPriceToDate()
+        {
+            try
+            {
+                var db = new DbManagement();
+                var date = DateTime.Now.ToString("dd/MMM/yyy");
+                var price = db.getSumPrice(date).Rows[0][0].ToString();
+
+                if (string.IsNullOrEmpty(price))
+                {
+                    txt_totalMoney.Text = "0.00";
+                }
+                else
+                {
+                    txt_totalMoney.Text = price;
+                }
+            }
+            catch (Exception ex) 
+            {
+                MessageBox.Show(ex.Message + "Price");
+
+            }
+
+
+        }
+
+        //get top sell product
+        private void sellTopProduct()
+        {
+            try
+            {
+                var db = new DbManagement();
+
+                if (db.getTopProdust().Rows.Count == 0)
+                {
+                    txt_top_product.Text = "None";
+                }
+                else
+                {
+                    var topItem = db.getTopProdust().Rows[0][0].ToString();
+                    txt_top_product.Text = topItem;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + "Product");
+            }
         }
     }
 

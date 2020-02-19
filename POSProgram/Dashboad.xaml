@@ -28,7 +28,7 @@
                         <Grid Width="179">
                             <TextBlock Foreground="#1cc88a" FontSize="17" Text="Total price" Margin="10,18,74,44"/>
                             <TextBlock x:Name="txt_totalMoney" FontSize="18" Text="2000000.00" Margin="10,46,66,15" FontWeight="Bold"/>
-                            <Image Source="D:\Programs\Icon\icon\icons8_transaction_96px.png" Margin="118,11,2,15" Stretch="Fill" StretchDirection="DownOnly"/>
+                            <Image Source="icons8_transaction_96px.png" Margin="118,11,2,15"/>
                         </Grid>
                     </StackPanel>
                 </materialDesign:Card>
@@ -45,7 +45,7 @@
                         <Grid Width="179">
                             <TextBlock Foreground="#4e73df" FontSize="17" Text="Time Use" Margin="10,18,74,44"/>
                             <TextBlock x:Name="txt_time_use" FontSize="18" Text="10:hr" Margin="10,46,66,15" FontWeight="Bold"/>
-                            <Image Source="D:\Programs\Icon\icon\icons8_last_24_hours_96px.png" Margin="118,11,2,15" Stretch="Fill" StretchDirection="DownOnly"/>
+                            <Image Source="icons8_last_24_hours_96px.png" Margin="118,11,2,15" StretchDirection="DownOnly" Stretch="UniformToFill"/>
                         </Grid>
                     </StackPanel>
                 </materialDesign:Card>
@@ -62,7 +62,7 @@
                         <Grid Width="179">
                             <TextBlock Foreground="#858796" FontSize="17" Text="Top Product" Margin="10,18,74,44"/>
                             <TextBlock x:Name="txt_top_product" FontSize="18" Text="Games" Margin="10,46,66,15" FontWeight="Bold"/>
-                            <Image Source="D:\Programs\Icon\icon\icons8_box_48px.png" Margin="118,11,2,15" Stretch="Fill" StretchDirection="DownOnly"/>
+                            <Image Source="icons8_box_48px.png" Margin="118,11,2,15" StretchDirection="DownOnly"/>
                         </Grid>
                     </StackPanel>
                 </materialDesign:Card>
@@ -81,7 +81,7 @@
   Width="100"
   materialDesign:HintAssist.Hint="Pick Date"
   Style="{StaticResource MaterialDesignFloatingHintDatePicker}" Margin="18,24,61,29" />
-                            <Image Source="D:\Programs\Icon\icon\icons8_timetable_128px.png" Margin="123,10,-3,16" Stretch="Fill" StretchDirection="DownOnly"/>
+                            <Image Source="icons8_timetable_128px.png" Margin="123,10,-3,16" StretchDirection="DownOnly"/>
                         </Grid>
                     </StackPanel>
                 </materialDesign:Card>
@@ -134,7 +134,7 @@
       VerticalAlignment="Center"
       HorizontalAlignment="Left"
       Style="{StaticResource MaterialDesignBody2TextBlock}">
-    March 19, 2016
+    March 19, 2020
                         </TextBlock>
                         <StackPanel
       Grid.Row="2"
@@ -208,32 +208,7 @@
                 </StackPanel>
 
 
-                <materialDesign:RatingBar
-                   Foreground=" #1cc88a"
-                     Margin="116,0,130,0"
-  x:Name="CustomRatingBar"
-  Max="3"
-  Value="2"
-  Orientation="Vertical" Height="79">
-                    <materialDesign:RatingBar.ValueItemTemplate>
-                        <DataTemplate
-                            
-      DataType="system:Int32">
-                            <Grid>
-                                <materialDesign:PackIcon
-          Kind="Heart"
-          Height="24"
-          Width="24" />
-                                <TextBlock
-          Text="{Binding}"
-          HorizontalAlignment="Center"
-          VerticalAlignment="Center"
-          FontSize="8"
-          Foreground="{DynamicResource PrimaryHueMidForegroundBrush}" />
-                            </Grid>
-                        </DataTemplate>
-                    </materialDesign:RatingBar.ValueItemTemplate>
-                </materialDesign:RatingBar>
+               
 
             </StackPanel>
 

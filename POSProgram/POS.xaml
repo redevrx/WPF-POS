@@ -28,9 +28,9 @@
 
 
 
-            <Image Height="90" Width="90"
+            <Image Height="50" Width="50"
                          Margin="20,14,43,0"
-                           Source="D:\Programs\Icon\icon\shopping_cart_PNG17.png" Stretch="Fill"/>
+                           Source="icons8_shopping_cart_promotion_48px.png"/>
 
             <TextBlock Margin="0,8,0,5"
                         Text="POS Management"
@@ -167,7 +167,7 @@
                 </StackPanel>
             </Grid>
             <Syncfusion:SfDataGrid 
-                x:Name="grid_cart"
+                Name="grid_cart"
                 SelectionChanged="grid_cart_SelectionChanged"
                 Height="590" 
                 GridPasteOption="PasteData,ExcludeFirstLine"    

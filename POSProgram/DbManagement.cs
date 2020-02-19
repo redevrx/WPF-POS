@@ -879,7 +879,7 @@ namespace POSProgram
                     var cmd = new SqlCommand(sql,con);
                     cmd.ExecuteNonQuery();
                     con.Close();
-                    MessageBox.Show("Update Successful...");
+                    //MessageBox.Show("Update Successful...");
                 }
             }
             catch (Exception ex)
@@ -1404,6 +1404,68 @@ namespace POSProgram
             {
                 MessageBox.Show(ex.Message.ToString());
             }
+        }
+
+        // find sum price in cart use date
+        public DataTable getSumPrice(string date)
+        {
+            try
+            {
+                DataTable dataTable = new DataTable();
+                var sql = "select SUM(Total) from Cart where sDate='" + date + "' ";
+                using (var connection = new SqlConnection(conn.getConnection()))
+                {
+                    if (connection.State == System.Data.ConnectionState.Closed)
+                        connection.Open();
+
+                    //
+                    using (SqlCommand cmd = new SqlCommand(sql, connection))
+                    {
+                        SqlDataAdapter dataAdapter = new SqlDataAdapter(cmd);
+                        dataAdapter.Fill(dataTable);
+                        connection.Close();
+                    }
+
+                }
+                return dataTable;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
+            return null;
+        }
+
+        // get top sell for product
+        public DataTable getTopProdust()
+        {
+            try
+            {
+                DataTable dataTable = new DataTable();
+                var sql = "select * from TopProduct";
+                using (var connection = new SqlConnection(conn.getConnection()))
+                {
+                    if (connection.State == System.Data.ConnectionState.Closed)
+                        connection.Open();
+
+                    //
+                    using (SqlCommand cmd = new SqlCommand(sql, connection))
+                    {
+                        SqlDataAdapter dataAdapter = new SqlDataAdapter(cmd);
+                        dataAdapter.Fill(dataTable);
+                        connection.Close();
+
+                        //item return = proName and ranger
+                    }
+
+                }
+                return dataTable;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
+            return null;
         }
     }
 

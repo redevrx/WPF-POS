@@ -74,12 +74,17 @@ namespace POSProgram
             {
                 // grid_cart.ItemsSource = "";
                 DbManagement db = new DbManagement();
-                grid_cart.ItemsSource = db.DataCart().DefaultView;
+
+                if (grid_cart != null)
+                {
+                    grid_cart.ItemsSource = db.DataCart().DefaultView;
+                }
+               
                 //grid_cart.DataContext = db.BrandData().ToList<BrandEntry>();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message + "");
+                MessageBox.Show(ex.Message + "Grid");
             }
         }
 
@@ -166,16 +171,6 @@ namespace POSProgram
                 MessageBox.Show(ex.GetType().Name + "");
             }
         }
-        private void getTransaction()
-        {
-            try
-            {
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.GetType().Name + "");
-            }
-        }
 
         private void txt_search_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -228,13 +223,16 @@ namespace POSProgram
             {
                 var item = this.grid_cart.CurrentItem as DataRowView;
                 var datarow = (item as DataRowView).Row;
-                db.RemoveCart(datarow["TransactionNo"].ToString());
+                var tranId = datarow["TransactionNo"].ToString();
+                db.RemoveCart(tranId);
                 var notify = new SetNotify();
                 notify.Title = "POS Management Form";
                 notify.Message = "Remove Data Successful...";
                 notify.ShowNotfyInformation();
 
-                LoadDatarefresh();
+                this.Dispatcher.BeginInvoke(new Action(() => {
+                    LoadDatarefresh();
+                }));
             }
             catch (Exception ex)
             {
@@ -274,10 +272,23 @@ namespace POSProgram
         //print bill and comfrim sell
         private void showPrintPreview()
         {
+            updateStockQuant();
+
             var previewPrint = new Report(txt_transaction.Text , txt_money.Text, txt_change_customer.Text);
             clearText();
             previewPrint.ShowDialog();
            
+        }
+
+        //update stock quantity 
+        private void updateStockQuant()
+        {
+            var db = new DbManagement();
+
+            for (int i = 0; i < db.searchCart(txt_transaction.Text).Rows.Count; i++)
+            {
+                db.UpdateQuantStock(db.searchCart(txt_transaction.Text).Rows[i][2].ToString(), Convert.ToInt32(db.searchCart(txt_transaction.Text).Rows[i][4].ToString()));
+            }
         }
 
         // set total price to txt_total

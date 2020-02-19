@@ -257,5 +257,10 @@ namespace POSProgram
         {
             showEmployee();
         }
+
+        private void btn_exit_app_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
     }
 }

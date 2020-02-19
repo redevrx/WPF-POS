@@ -37,6 +37,8 @@ namespace POSProgram
         private void btn_report_Click(object sender, RoutedEventArgs e)
         {
             btn_report.Visibility = Visibility.Hidden;
+            btn_close.Visibility = Visibility.Hidden;
+
             var printD = new PrintDialog();
             if (printD.ShowDialog() == true)
             {

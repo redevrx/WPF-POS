@@ -18,7 +18,7 @@
 
 
                 <StackPanel Orientation="Horizontal" Margin="30" Grid.Row="0">
-                    <Image Source="D:\Programs\Icon\icon\icons8_transaction_96px.png" Width="50" Height="50"
+                    <Image Source="icons8_transaction_96px.png" Width="50" Height="50"
                            VerticalAlignment="Center"/>
 
                     <TextBlock Text="REPORT" VerticalAlignment="Center"

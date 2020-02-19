@@ -7,7 +7,7 @@
         xmlns:local="clr-namespace:POSProgram"
        
         mc:Ignorable="d"
-        ToolTip="Double Click for Close App..." MouseDoubleClick="Window_MouseDoubleClick" MouseDown="Window_MouseDown" Loaded="Window_Loaded" ResizeMode="NoResize" WindowStyle="None" WindowStartupLocation="CenterScreen" Height="650" Width="1200">
+        ToolTip="Double Click for Close App..."  MouseDown="Window_MouseDown" Loaded="Window_Loaded" ResizeMode="NoResize" WindowStyle="None" WindowStartupLocation="CenterScreen" Height="650" Width="1200">
     <Grid  x:Name="grid">
         <StackPanel Margin="0,0,0,0" Orientation="Horizontal" Height="58"  VerticalAlignment="Top" Background="#FF00C6FF">
             <StackPanel.Effect>
@@ -35,16 +35,41 @@
                 </Border>
             </Grid>
             <Grid
-                Margin="0,0,0,0.333" Width="755">
-                
-                <ToggleButton
-                    Margin="700,0,0,0"
+                Margin="0,0,0,0.333" Width="820">
+
+                <StackPanel Orientation="Horizontal">
+                    <ToggleButton
+                    Margin="500,0,0,0"
                     Background="WhiteSmoke"
   Style="{StaticResource MaterialDesignActionToggleButton}"
   ToolTip="Icon User">
-                    <Image  Name="image_user"
+                        <Image  Name="image_user"
     Source="{x:Null}" Stretch="Fill"></Image>
-                </ToggleButton>
+                    </ToggleButton>
+
+                    <TextBlock Name="txt_user_show" 
+                                   TextAlignment="Left"
+                                  Margin="10 ,0,16,0"
+                                 VerticalAlignment="Center"
+                                   Foreground="WhiteSmoke"
+                            Text="User Name" 
+                               FontFamily="Dubai Medium" 
+                               FontSize="18"/>
+
+                    <Rectangle
+                           Width="3"
+                            Fill="DarkSlateGray"/>
+
+                    <TextBlock x:Name="txt_user_admin"
+                                   TextAlignment="Center"
+                                   Foreground="WhiteSmoke"
+                               Margin="10 ,0,10,0"
+                               VerticalAlignment="Center"
+                                    FontFamily="Dubai Medium" FontSize="18"
+                                   Text="Admin" />
+
+
+                </StackPanel>
             </Grid>
         </StackPanel>
         <StackPanel Margin="0" Orientation="Vertical" HorizontalAlignment="Left" Width="166" Height="592" VerticalAlignment="Bottom">
@@ -62,42 +87,17 @@
                     <Grid Margin="10,14,0,0" >
                         <materialDesign:PackIcon Kind="ViewDashboard" Foreground="White" />
                     </Grid>
-                    <Grid Width="128" Height="32" Margin="0,4,0,0">
+                    <Grid Width="123" Height="32" Margin="10,4,0,0">
 
                         <Button Name="btn_dashboad"
                                 
                                 Click="btn_dashboad_Click" Content="{DynamicResource dashboad}" FontFamily="Century Gothic" FontSize="18" 
-                                  
+                                  HorizontalAlignment="Left"
                                     BorderBrush="{x:Null}" 
                                     Background="{x:Null}" Foreground="WhiteSmoke">
                         </Button>
 
-                        <TextBlock Name="txt_user_show" 
-                                   TextAlignment="Left"
-                                   Margin="1010,-52,-984,58"
-                                 
-                                   Foreground="WhiteSmoke"
-                            Text="User Name" FontFamily="Dubai Medium" FontSize="18"/>
-                        <Grid  Margin="996,-59,-870,52" 
-                               Background="#FF040404"
-                               Opacity="0.5"
-                               RenderTransformOrigin="0.5,0.5">
-                            <Grid.RenderTransform>
-                                <TransformGroup>
-                                    <ScaleTransform ScaleX="-1"/>
-                                    <SkewTransform/>
-                                    <RotateTransform/>
-                                    <TranslateTransform/>
-                                </TransformGroup>
-                            </Grid.RenderTransform>
-                        </Grid>
-
-                        <TextBlock x:Name="txt_user_admin"
-                                   TextAlignment="Center"
-                                   Foreground="WhiteSmoke"
-                                    FontFamily="Dubai Medium" FontSize="18"
-                                   Text="Admin" Margin="915,-52,-865,58"/>
-
+                      
                     </Grid>
                 </StackPanel>
             </Grid>
@@ -107,11 +107,14 @@
                     <Grid Margin="10,14,0,0" >
                         <materialDesign:PackIcon Kind="Account" Foreground="White" />
                     </Grid>
-                    <Grid Width="128" Height="32" Margin="0,4">
+                    <Grid Width="123" Height="32" Margin="10,4">
 
                         <Button Name="btn_account"
                                 
-                                Content="{DynamicResource account}" FontFamily="Century Gothic" FontSize="18" 
+                                Content="{DynamicResource account}" 
+                                FontFamily="Century Gothic" 
+                                FontSize="18" 
+                                HorizontalAlignment="Left"
                                      BorderBrush="{x:Null}" 
                                     Background="{x:Null}" Foreground="WhiteSmoke" Click="btn_account_Click">
                            
@@ -126,13 +129,14 @@
                     <Grid Margin="10,14,0,0" >
                         <materialDesign:PackIcon Kind="PeopleAdd" Foreground="White" />
                     </Grid>
-                    <Grid Width="128" Height="32" Margin="0,4">
+                    <Grid Width="123" Height="32" Margin="10,4">
 
                         <Button Name="btn_employee"
                                 
                                 Content="Employee" 
                                 FontFamily="Century Gothic" 
                                 FontSize="18" 
+                                HorizontalAlignment="Left"
                                 BorderBrush="{x:Null}" 
                                 Background="{x:Null}" Foreground="WhiteSmoke"
                                 Click="btn_employee_Click">
@@ -148,10 +152,11 @@
                     <Grid Margin="10,14,0,0" >
                         <materialDesign:PackIcon Kind="BoxVariant" Foreground="White" />
                     </Grid>
-                    <Grid Width="128" Height="32" Margin="0,4,0,0">
+                    <Grid Width="123" Height="32" Margin="10,4,0,0">
 
-                        <Button Name="btn_product"  Content="{DynamicResource product}" FontFamily="Century Gothic" FontSize="18" 
-                                    
+                        <Button Name="btn_product"  
+                                Content="{DynamicResource product}" FontFamily="Century Gothic" FontSize="18" 
+                                    HorizontalAlignment="Left"
                                      BorderBrush="{x:Null}" 
                                     Background="{x:Null}" Foreground="WhiteSmoke" Click="btn_product_Click">
                           
@@ -166,11 +171,11 @@
                     <Grid Margin="10,14,0,0" >
                         <materialDesign:PackIcon Kind="Barn" Foreground="White" />
                     </Grid>
-                    <Grid Width="128" Height="32" Margin="0,4">
+                    <Grid Width="123" Height="32" Margin="13,4">
 
 
                         <Button Name="btn_brand"  Content="{DynamicResource brand}" FontFamily="Century Gothic" FontSize="18" 
-                                    
+                                    HorizontalAlignment="Left"
                                     BorderBrush="{x:Null}" 
                                     Background="{x:Null}" Foreground="WhiteSmoke"  Click="btn_brand_Click">
                            
@@ -186,13 +191,17 @@
                     <Grid Margin="10,14,0,0" >
                         <materialDesign:PackIcon Kind="Category" Foreground="White" />
                     </Grid>
-                    <Grid Width="128" Height="32" Margin="0,4">
+                    <Grid Width="123" Height="32" Margin="10,4">
 
 
-                        <Button Name="btn_category"  Content="{DynamicResource category}" FontFamily="Century Gothic" FontSize="18" 
+                        <Button Name="btn_category"  
+                                Content="{DynamicResource category}"
+                                FontFamily="Century Gothic" 
+                                FontSize="18" 
                                
                                    BorderBrush="{x:Null}" 
-                                    Background="{x:Null}" Foreground="WhiteSmoke"   Click="btn_category_Click">
+                                    Background="{x:Null}" 
+                                Foreground="WhiteSmoke"   Click="btn_category_Click">
                            
                         </Button>
 
@@ -209,14 +218,15 @@
                     <Grid Margin="10,14,0,0" >
                         <materialDesign:PackIcon Kind="Stocking" Foreground="White" />
                     </Grid>
-                    <Grid Width="128" Height="32" Margin="0,4">
+                    <Grid Width="123" Height="32" Margin="16,4">
 
 
                         <Button Name="btn_stock" 
                                 Content="{DynamicResource stockin}"
                                 Click="btn_stock_Click"
-                                FontFamily="Century Gothic" FontSize="18" 
-                                  
+                                FontFamily="Century Gothic" 
+                                FontSize="18" 
+                                  HorizontalAlignment="Left"
                                     BorderBrush="{x:Null}" 
                                     Background="{x:Null}" Foreground="WhiteSmoke"  >
                            
@@ -231,12 +241,12 @@
                     <Grid Margin="10,14,0,0" >
                         <materialDesign:PackIcon Kind="PointOfSale" Foreground="White" />
                     </Grid>
-                    <Grid Width="128" Height="32" Margin="0,4">
+                    <Grid Width="123" Height="32" Margin="16,4">
 
 
                         <Button Name="btn_pos" 
                                 Content="{DynamicResource pos}"
-                                HorizontalAlignment="Center"
+                                HorizontalAlignment="Left"
                                 Click="btn_Pos_Click"
                                 FontFamily="Century Gothic" FontSize="18" 
                                    BorderBrush="{x:Null}" 
@@ -249,7 +259,34 @@
                     </Grid>
                 </StackPanel>
             </Grid>
-            
+
+            <Grid Margin="0,5,0,0"  Height="40">
+                <StackPanel  Orientation="Horizontal">
+                    <Grid Margin="10,14,0,0" >
+                        <materialDesign:PackIcon Kind="ExitToApp" Foreground="White" />
+                    </Grid>
+                    <Grid Width="123" Height="32" Margin="16,4">
+
+
+                        <Button Name="btn_exit_app" 
+                                Content="Exit"
+                                HorizontalAlignment="Left"
+                                Click="btn_exit_app_Click"
+                                
+                                FontFamily="Century Gothic" FontSize="18" 
+                                   BorderBrush="{x:Null}" 
+                                    Background="{x:Null}" Foreground="WhiteSmoke" >
+                            <Button.Effect>
+                                <DropShadowEffect ShadowDepth="2" BlurRadius="1" Opacity="0.2"/>
+                            </Button.Effect>
+                        </Button>
+
+                    </Grid>
+                </StackPanel>
+
+            </Grid>
+
+
 
 
         </StackPanel>

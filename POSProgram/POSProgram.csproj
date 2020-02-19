@@ -288,7 +288,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="packages.config" />
@@ -314,6 +314,45 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Feedtable\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\price.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_box_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_box_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_last_24_hours_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_shopping_cart_promotion_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_timetable_128px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_transaction_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shopping_cart_PNG17.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="icons8_transaction_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="icons8_last_24_hours_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="icons8_box_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="icons8_timetable_128px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="icons8_shopping_cart_promotion_48px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
