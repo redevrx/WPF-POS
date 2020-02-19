@@ -12,10 +12,8 @@ namespace POSProgram
         // string connection=>ConfigurationManager.ConnectionStrings["conn"].ConnectionString;
         public string getConnection()
         {
-            // return "server=192.168.99.100;user id=root; password=p123456;database=LearnDB";
-            //Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=DB12;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False
-           // @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=pos;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"
-            return @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=DB12;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+           
+            return @"Connection String";
         }
     }
 }
