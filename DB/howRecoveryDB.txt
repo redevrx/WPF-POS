@@ -1,0 +1,4 @@
+RESTORE DATABASE pos FROM DISK = 'C:\Users\(user machine)\source\repos\db\pos.BAK' (ที่อยู่ไฟล์ backup)
+WITH MOVE 'pos' TO 'C:\Users\(user machine)\source\repos\db\pos.mdf', (backup ไปที่ไหน)
+MOVE 'pos_log' TO  'C:\Users(user machine)\source\repos\db\pos.ldf' (backup ไปที่ไหน)
+GO
