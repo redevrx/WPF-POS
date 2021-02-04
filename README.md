@@ -1,7 +1,7 @@
 # WPF-POS
 point of sale
 
-[![Audi R8](http://img.youtube.com/vi/KOxbO0EI4MA/0.jpg)](https://www.youtube.com/embed/iEwnVaI6xwA "Audi R8")
+[![Audi R8](https://github.com/redevRx/WPF-POS/blob/master/Capture.PNG)](https://www.youtube.com/embed/iEwnVaI6xwA "Audi R8")
 
 
 
